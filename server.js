@@ -117,6 +117,11 @@ app.get('/kawabou-allobs/:date/:time', (req, res) => {
   const { date, time } = req.params;
   fetchFromKawabou(`/kawabou/file/gjson/overobs/stg/${date}/${time}/over-obs-create.json`, res);
 });
+// 市区町村別 水位観測所一覧（地図用）
+app.get('/kawabou-swstg/:date/:time/:twnCd', (req, res) => {
+  const { date, time, twnCd } = req.params;
+  fetchFromKawabou(`/kawabou/file/gjson/obs/${date}/${time}/swstg/${twnCd}.json`, res);
+});
 app.listen(PORT, () => {
   console.log(`プロキシサーバー起動中: port ${PORT}`);
 });
