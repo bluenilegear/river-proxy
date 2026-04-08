@@ -136,13 +136,11 @@ app.get('/kawabou-dam/:date/:time/:twnCd', (req, res) => {
   const { date, time, twnCd } = req.params;
   fetchFromKawabou(`/kawabou/file/gjson/obs/${date}/${time}/dam/${twnCd}.json`, res);
 });
-
 // ダム時系列データ
 app.get('/kawabou-dam-tmlist/:date/:time/:fcd', (req, res) => {
   const { date, time, fcd } = req.params;
   fetchFromKawabou(`/kawabou/file/files/tmlist/dam/${date}/${time}/${fcd}.json`, res);
 });
-
 // ダムマスタ情報
 app.get('/kawabou-dam-master/:fcd', (req, res) => {
   const { fcd } = req.params;
